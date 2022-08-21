@@ -16,8 +16,10 @@ function createGrid(inputSize = 32){
         }
     }
 
-    divs = document.querySelectorAll(".grid-div")
+    const divs = document.querySelectorAll(".grid-div")
     divs.forEach(div => div.addEventListener('mouseover', function(e){
+    div.classList.add("grid-div")
+    div.classList.remove("grid-div-white")
     e.target.style.background = "black"
     }))   
 }
@@ -35,6 +37,20 @@ buttonSize.addEventListener('click', function(){
     createGrid(inputSize)
 })
 
+buttonClear = document.querySelector(".button-clear")
+buttonClear.addEventListener('click', function(){
+    const divs = document.querySelectorAll(".grid-div")
+    divs.forEach(function(div){
+        div.classList.remove("grid-div")
+        div.classList.add("grid-div-white")
+        div.style.background="white"
+
+        
+
+    })
+    
+})
+
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
@@ -42,3 +58,4 @@ function removeAllChildNodes(parent) {
 }
 
 createGrid()
+

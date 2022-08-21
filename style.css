@@ -31,4 +31,15 @@
     border-color: black;
     border-width: 2px;
     
+    
+}
+
+.grid-div-white{
+    flex: auto;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    transition: all 2s ease;
+    
+    
 }
